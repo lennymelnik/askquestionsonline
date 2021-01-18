@@ -1,0 +1,66 @@
+*{
+  font-family: montserrat;
+}
+.main-info{
+  position: relative;
+  top: -50px;
+  left: 70px;
+  p{
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.p-second{
+  font-weight: bold;
+  font-size: 15px;
+}
+ion-card-header{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  height: 80px;
+}
+
+.lower-text{
+  ion-icon{
+
+    font-weight: bold;
+
+    font-size: 25px;
+  }
+  p{
+    display: inline;
+    position: relative;
+    left: 20px;
+    font-weight: bold;
+    font-weight: bold;
+  }
+}
+.logo-next{
+  display: inline;
+  margin-left: 20px;
+
+}
+
+
+//ion-header{
+//  height: 20vh;
+//}
+.upper-tool{
+  height: 10vh;
+}
+.in-div{
+  display: flex;
+  margin-left: 6.45vw;
+}
+.ita{
+  font-style: italic;
+}
+.ppp{
+  margin-top: 1rem;
+}
+
+
+ion-card{
+
+}

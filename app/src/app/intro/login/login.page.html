@@ -1,0 +1,31 @@
+
+
+<ion-content fullscreen="true">
+
+
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size-sm="6" offset-sm="3">
+        <div class="top"><h1>
+         <img class="img" src="assets/uc.png">
+        </h1></div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" >
+          <ion-item lines="none">
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input placeholder="email@email.com" formControlName="email" type="email"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input   formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-button class="top-but" type="submit">Login </ion-button>
+        </form>
+        <ion-button color="secondary" routerLink="/signup">Sign-Up </ion-button>
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

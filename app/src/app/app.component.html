@@ -1,0 +1,39 @@
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="/assets/UCDavisUnofficialSeal_Gold.png">
+        <h2>UC-Message</h2>
+
+      </div>
+
+      <ion-list lines="none" class="menu-items">
+        <ion-item  routerLink="/main/inf">
+          <ion-icon name="book-sharp"></ion-icon>
+          History
+        </ion-item>
+        <ion-item routerLink="/main/become">
+          <ion-icon name="bookmarks-sharp"></ion-icon>
+          save
+        </ion-item>
+        <ion-item >
+          <ion-icon name="settings-sharp"></ion-icon>
+          Settings
+
+        </ion-item>
+        <ion-item (click)="logout()">
+          <ion-icon name="exit-sharp"></ion-icon>
+          Log out
+        </ion-item>
+        <!--       <ion-item>-->
+        <!--         <ion-icon name="home"></ion-icon>-->
+        <!--       </ion-item>-->
+      </ion-list>
+
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,63 @@
+
+
+<ion-content fullscreen="true">
+
+
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <ion-col size-sm="6" offset-sm="3">
+        <img class="img" src="assets/uc.png">
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <ion-item lines="none">
+            <ion-label position="stacked">Full Name</ion-label>
+            <ion-input  formControlName="name" ></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input  type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input  type="password"  formControlName="password"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="stacked">Campus</ion-label>
+            <ion-select  formControlName="campus" placeholder="select one">
+              <ion-select-option value="UCD">2021</ion-select-option>
+              <ion-select-option value="UCBerkely">2022</ion-select-option>
+              <ion-select-option value="UCLA">2023</ion-select-option>
+              <ion-select-option value="UCI">2024</ion-select-option>
+              <ion-select-option value="UCSB">2024</ion-select-option>
+              <ion-select-option value="UCSD">2024</ion-select-option>
+              <ion-select-option value="UCR">2024</ion-select-option>
+              <ion-select-option value="UCM">2024</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label position="stacked">Graduation Year</ion-label>
+            <ion-select  formControlName="year" placeholder="select one">
+              <ion-select-option value="2021">2021</ion-select-option>
+              <ion-select-option value="2022">2022</ion-select-option>
+              <ion-select-option value="2023">2023</ion-select-option>
+              <ion-select-option value="2024">2024</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Major</ion-label>
+            <ion-input formControlName="major" placeholder="Statistic"></ion-input>
+          </ion-item>
+          <ion-button [disabled]="!registerForm.valid" class="top-but" type="submit" >Sign-Up </ion-button>
+        </form>
+
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

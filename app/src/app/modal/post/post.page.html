@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar  color="primary">
+    <ion-title class="ion-text-center">
+      Post
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button >back</ion-back-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row  class="ion-text-center">
+      <ion-col  size-sm="6" offset-sm="3">
+        <form  [formGroup]="commentForm"  (ngSubmit)="postQuestion()">
+
+          <ion-item lines="none">
+            <ion-label position="stacked">Topic</ion-label>
+            <ion-select formControlName="topic" interface="popover">
+              <ion-select-option value="general">General</ion-select-option>
+              <ion-select-option value="school">School</ion-select-option>
+              <ion-select-option value="health">Health</ion-select-option>
+              <ion-select-option value="Clubs">Clubs</ion-select-option>
+              <ion-select-option value="Food">Places</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label position="stacked">Question</ion-label>
+            <ion-textarea formControlName="comment"   rows="6" cols="20" ></ion-textarea>
+          </ion-item>
+          <ion-button [disabled]="!commentForm.valid" class="top-but" type="submit" >Login </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>

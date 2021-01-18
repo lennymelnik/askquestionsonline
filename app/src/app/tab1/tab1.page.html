@@ -1,0 +1,96 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="upper-tool"  color="primary">
+
+    <ion-buttons slot="start">
+      <ion-menu-toggle  menu="main-menu">
+        <ion-menu-button  menu="main-menu"></ion-menu-button>
+      </ion-menu-toggle>
+
+    </ion-buttons>
+
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+
+
+
+</ion-header>
+<ion-toolbar>
+  <ion-segment  value="social"  (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="social">
+      <ion-icon name="globe"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="school">
+      <ion-icon name="school"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="health">
+      <ion-icon name="medkit"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="clubs">
+      <ion-icon name="people"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="restaurant">
+      <ion-icon name="fast-food"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true">
+
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col  size-sm="6" offset-sm="3">
+        <ion-card *ngFor=" let p  of DataAll " routerLink="/detail" >
+          <ion-card-header >
+            <ion-avatar>
+              <img src="https://miro.medium.com/max/526/0*nnYie3yap6MX3Ods.jpg">
+            </ion-avatar>
+            <div class="main-info">
+              <p class="p-second" >{{p.userId}}</p>
+              <p class="ita" >{{p.questionId}} </p>
+              <p class="ita">{{p._id}}</p>
+
+            </div>
+
+            <!--              <ion-button>-->
+            <!--                <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>-->
+            <!--              </ion-button>-->
+
+
+          </ion-card-header>
+          <ion-card-content >
+            <p class="ppp" >{{p.question}}</p>
+
+          </ion-card-content>
+
+          <ion-card-content>
+            <div class="lower-text  in-div ">
+              <ion-icon color="primary" slot="icon-only" name="thumbs-up-sharp"></ion-icon>
+              <ion-badge   color="transparent">11</ion-badge>
+
+              <div  class=" in-div   ">
+                <ion-icon color="warning" name="chatbox-sharp"></ion-icon>
+                <ion-badge     color="transparent"> 20</ion-badge>
+                <div class="in-div  ">
+                  <ion-icon color="danger" name="eye-sharp"></ion-icon>
+                  <ion-badge  color="transparent" >120</ion-badge>
+                </div>
+
+
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab  routerLink="/post" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="secondary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

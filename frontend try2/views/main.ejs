@@ -1,0 +1,30 @@
+
+    <div class="starter-template text-center py-5 px-3">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="" height="200">
+        </a>
+        <h1>Welcome to UC Connect!</h1>
+        <p class="lead">Login to answer/ask questions</p>
+      </div>
+      <form class="d-flex">
+        <label for="exampleDataList" class="form-label">Question Search</label>
+        <input class="form-control" list="questions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="questions">
+          <% for(i=0;i<questions.length;i++){ %>
+          <option><%= questions[i].question %></option>
+            <% } %>
+        
+        </datalist>
+       
+      </form>
+<br>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+   
+  
+<% for(i=0;i<questions.length;i++){ %>
+    <% question = questions[i] %>
+    
+    <%- include('question'); %>
+
+<% } %>
+</div>

@@ -1,0 +1,29 @@
+
+
+  
+     <div class="starter-template text-center py-5 px-3">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="" height="200">
+        </a>
+        <h1>Welcome to UC Connect!</h1>
+        <p class="lead">Login to answer/ask questions</p>
+      </div>
+    <%- include('question');%>
+<% if(question.replys){ %>
+
+    <% for(x=0;x<question.replys.length;x++){ %>
+<div class="card">
+    
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%= question.replys[x].reply %></p>
+        <% if(question.replys[x].user){ %>
+            <footer class="blockquote-footer"><cite title="Source Title"><%= question.replys[x].user.name %></cite></footer>
+
+        <% } %>
+      </blockquote>
+    </div>
+  </div>
+  <% } %>
+
+  <% } %>

@@ -11,6 +11,15 @@ var expressLayouts = require('express-ejs-layouts')
 var uniqid = require('uniqid')
 const saltRounds = 10;
 
+
+
+var privateKey = fs.readFileSync('/etc/letsencrypt/live/askquestions.online/privkey.pem', 'utf8');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/askquestions.online/fullchain.pem', 'utf8');
+var credentials = {
+    key: privateKey,
+    cert: certificate
+};
+
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 
@@ -248,6 +257,14 @@ MongoClient.connect(url, function(err, db) {
         })
         
     
-    app.listen(80)
+    
+    http.createServer(function (req, res) {
+        res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+        res.end();
+      }).listen(80);
+      
+      var httpsServer = https.createServer(credentials, app);
+      
+      httpsServer.listen(443)
 
 })
